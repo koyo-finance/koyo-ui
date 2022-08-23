@@ -120,7 +120,7 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 			default:
 				return `
                 background-color: ${theme.colors.action.active};
-                color: ${disabled ? theme.colors.text.inactive : theme.colors.action.text};
+                color: ${disabled ? theme.colors.action.inactiveText : theme.colors.action.text};
                 &:hover {
                     background-color: ${theme.colors.action.hover};
                 }

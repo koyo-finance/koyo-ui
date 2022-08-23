@@ -11,13 +11,14 @@ export interface KoyoTheme {
 		};
 		text: {
 			primary: string;
-            inactive: string;
+			inactive: string;
 		};
 		action: {
 			active: string;
 			inactive: string;
 			hover: string;
 			text: string;
+			inactiveText: string;
 		};
 		inform: {
 			active: string;
@@ -36,16 +37,16 @@ export interface KoyoTheme {
 			cell: string;
 		};
 		success: {
-            hover: string;
-            active: string;
-            text: string;
-            cell: string;
-        };
+			hover: string;
+			active: string;
+			text: string;
+			cell: string;
+		};
 	};
 	fontFamily: {
 		main: string;
+		mono: string;
 	};
-
 }
 
 export const darkTheme: KoyoTheme = {
@@ -61,13 +62,14 @@ export const darkTheme: KoyoTheme = {
 		},
 		text: {
 			primary: '#FFFFFF',
-			inactive: '#f9fafb',
+			inactive: '#9CA3AF'
 		},
 		action: {
 			active: '#F0932C',
 			inactive: '#4B5563',
 			hover: '#FFB750',
-			text: '#000000'
+			text: '#000000',
+			inactiveText: '#f9fafb'
 		},
 		inform: {
 			active: '#4b5563',
@@ -90,11 +92,11 @@ export const darkTheme: KoyoTheme = {
 			active: '#F0932C',
 			cell: '#F0932C',
 			text: '#000000'
-		},
-
+		}
 	},
 	fontFamily: {
-		main: "'Sora', sans-serif"
+		main: "'Sora', sans-serif",
+		mono: "'JetBrains Mono', 'monospace'"
 	}
 };
 
