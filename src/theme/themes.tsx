@@ -7,14 +7,11 @@ export interface KoyoTheme {
 			secondary: string;
 			tertiary: string;
 			stroke: string;
-			overlay: string;
+			footnote: string;
 		};
 		text: {
 			primary: string;
-			secondary: string;
-			tertiary: string;
-			footnote: string;
-			highlight: string;
+            inactive: string;
 		};
 		action: {
 			active: string;
@@ -22,8 +19,9 @@ export interface KoyoTheme {
 			hover: string;
 			text: string;
 		};
-		highlight: {
-			primary: string;
+		inform: {
+			active: string;
+			text: string;
 		};
 		alert: {
 			hover: string;
@@ -38,73 +36,70 @@ export interface KoyoTheme {
 			cell: string;
 		};
 		success: {
-			hover: string;
-			active: string;
-			text: string;
-			cell: string;
-		};
+            hover: string;
+            active: string;
+            text: string;
+            cell: string;
+        };
 	};
 	fontFamily: {
-		sans: string;
-		body: string;
-		heading: string;
+		main: string;
 	};
+
 }
 
 export const darkTheme: KoyoTheme = {
 	isDark: true,
 	colors: {
 		cell: {
-			background: '#040811',
-			primary: '#0A0E1C',
-			secondary: '#0E1324',
-			tertiary: '#292E4F',
-			stroke: '#8BB0EF',
-			overlay: 'rgba(255, 255, 255, 0.2)'
-		},
-		action: {
-			active: '#1C64F2',
-			inactive: '#71727a', // I added this
-			hover: '#3535DC', // I added this
-			text: '#FFFFFF'
-		},
-		highlight: {
-			primary: '#583BD4'
+			background: '#300729',
+			primary: '#300729',
+			secondary: '#000000',
+			tertiary: '#805779',
+			stroke: '#F0932C',
+			footnote: '#9CA3AF'
 		},
 		text: {
 			primary: '#FFFFFF',
-			secondary: '#8BB0EF',
-			tertiary: '#7B9CD4',
-			footnote: '#D9D9D9',
-			highlight: '#3DA8F5'
+			inactive: '#f9fafb',
+		},
+		action: {
+			active: '#F0932C',
+			inactive: '#4B5563',
+			hover: '#FFB750',
+			text: '#000000'
+		},
+		inform: {
+			active: '#805779',
+			text: '#ffffff'
 		},
 		alert: {
-			hover: '#FF700B',
-			active: '#FF931E',
-			text: '#FF931E',
-			cell: '#FFF1E2'
+			hover: '#ef4444',
+			active: '#f87171',
+			cell: '#dc2626',
+			text: '#ffffff'
 		},
 		danger: {
-			hover: '#FF2A21',
-			active: '#FF5621',
-			text: '#FF5621',
-			cell: '#FFE0D7'
+			hover: '#ef4444',
+			active: '#f87171',
+			cell: '#dc2626',
+			text: '#ffffff'
 		},
 		success: {
-			hover: '#4FC423',
-			active: '#4FE021',
-			text: '#4FE021',
-			cell: '#EDFFE8'
-		}
+			hover: '#F0932C',
+			active: '#F0932C',
+			cell: '#F0932C',
+			text: '#000000'
+		},
+
 	},
 	fontFamily: {
-		sans: "'aileron', sans-serif",
-		heading: "'Inter', sans-serif",
-		body: "'Source Sans Pro', sans-serif"
+		main: "'Sora', sans-serif"
 	}
 };
 
 // TODO: Add light theme
+
 export const lightTheme: KoyoTheme = {
 	...darkTheme,
 	isDark: false
