@@ -16,6 +16,10 @@ export default {
 			defaultValue: false,
 			control: { type: 'boolean' }
 		},
+		animate: {
+			defaultValue: true,
+			control: { type: 'boolean' }
+		},
 		size: {
 			defaultValue: 'medium',
 			control: {
@@ -27,7 +31,7 @@ export default {
 			defaultValue: 'action',
 			control: {
 				type: 'select',
-				options: ['action', 'inform', 'alert', 'danger', 'success']
+				options: ['action', 'alert', 'danger', 'success']
 			}
 		}
 	}
@@ -47,13 +51,7 @@ export const ActionDisabled = Template.bind({});
 ActionDisabled.args = {
 	children: 'Action Button',
 	variant: 'action',
-	disabled: true
-};
-
-export const Inform = Template.bind({});
-Inform.args = {
-	children: 'Inform Button',
-	variant: 'inform',
+    animate: false,
 	disabled: true
 };
 

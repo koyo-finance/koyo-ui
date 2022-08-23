@@ -70,8 +70,8 @@ export const darkTheme: KoyoTheme = {
 			text: '#000000'
 		},
 		inform: {
-			active: '#805779',
-			text: '#ffffff'
+			active: '#4b5563',
+			text: '#e5e7eb'
 		},
 		alert: {
 			hover: '#ef4444',

@@ -1,14 +1,15 @@
 // Generated with util/create-component.js
 import React from 'react';
-import styled, { DefaultTheme, StyledComponentBase } from 'styled-components';
+import styled, { DefaultTheme, StyledComponentBase, keyframes, css } from 'styled-components';
 
 import { ButtonProps } from './Button.types';
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, variant, size, fluid, ...rest }, ref) => (
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, variant, size, animate, fluid, ...rest }, ref) => (
 	<StyledButton
 		data-testid="button"
 		variant={variant}
 		size={size}
+        animate={animate}
 		fluid={fluid}
 		ref={ref}
 		{...(rest as StyledComponentBase<'button', DefaultTheme, {}, never>)}
@@ -17,15 +18,29 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, var
 	</StyledButton>
 ));
 
-type StyledButtonProps = {
+export interface StyledButtonProps {
 	variant: ButtonProps['variant'];
 	size: ButtonProps['size'];
+	animate: ButtonProps['animate'];
 	fluid: ButtonProps['fluid'];
-};
+}
+
+const StyledButtonKeyframes = keyframes`
+    0% {
+        transform: scale(0.95);
+    }
+    40% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+`;
 
 const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 	variant: props.variant || 'action',
 	size: props.size || 'medium',
+	animate: typeof props.animate === 'undefined' ? true : props.animate,
 	disabled: props.disabled || false
 }))<StyledButtonProps>`
 	font-family: ${(props) => props.theme.fontFamily.main};
@@ -34,43 +49,59 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 	border-radius: 0.5rem;
 	border: none;
 	width: ${(props) => (props.fluid ? '100%' : 'auto')};
+
 	transition: background-color 0.1s ease-in-out;
+
+	${({ animate }) => {
+		switch (animate) {
+			case false:
+				return '';
+			case true:
+			default:
+				return css`
+                animation: ${StyledButtonKeyframes} 0.25s ease-out;
+                &:active:hover,
+                &:active:focus {
+                    animation: none;
+                }
+                &:active:hover,
+                &:active:focus {
+                    transform: scale(0.95);
+                }
+            `;
+		}
+	}}
+
 	${({ variant, disabled, theme }) => {
 		switch (variant) {
 			case 'alert':
 				return `
                 background-color: ${theme.colors.alert.cell};
                 color: ${theme.colors.alert.text};
-                border: 1px solid ${theme.colors.alert.text};
                 &:hover {
-                    color: ${theme.colors.alert.hover};
-                    border: 1px solid ${theme.colors.alert.hover};
+                    color: ${theme.colors.alert.text};
                 }
                 &:active {
                     color: ${theme.colors.alert.text};
-                    border: 1px solid ${theme.colors.alert.text};
+                    background-color: ${theme.colors.alert.active};
                 }
                 &:disabled {
                     color: ${theme.colors.alert.text};
-                    border: 1px solid ${theme.colors.alert.text};
                 }
             `;
 			case 'danger':
 				return `
                 background-color: ${theme.colors.danger.cell};
                 color: ${theme.colors.danger.text};
-                border: 1px solid ${theme.colors.danger.text};
                 &:hover {
-                    color: ${theme.colors.danger.hover};
-                    border: 1px solid ${theme.colors.danger.hover};
+                    color: ${theme.colors.danger.text};
                 }
                 &:active {
                     color: ${theme.colors.danger.text};
-                    border: 1px solid ${theme.colors.danger.text};
+                    background-color: ${theme.colors.danger.active};
                 }
                 &:disabled {
                     color: ${theme.colors.danger.text};
-                    border: 1px solid ${theme.colors.danger.text};
                 }
             `;
 			case 'success':
@@ -79,29 +110,12 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
                 color: ${theme.colors.success.text};
                 border: 1px solid ${theme.colors.success.text};
                 &:hover {
-                    color: ${theme.colors.success.hover};
-                    border: 1px solid ${theme.colors.success.hover};
+                    background-color: ${theme.colors.success.hover}
                 }
                 &:active {
-                    color: ${theme.colors.success.text};
-                    border: 1px solid ${theme.colors.success.text};
-                }
-                &:disabled {
-                    color: ${theme.colors.success.text};
-                    border: 1px solid ${theme.colors.success.text};
+                    background-color: ${theme.colors.success.active};
                 }
             `;
-			case 'inform':
-				return `
-                background-color: ${theme.colors.inform.active};
-                color: ${theme.colors.inform.text};
-                &:active {
-                    background-color: ${theme.colors.inform.active};
-                }
-                &:disabled {
-                    background-color: ${theme.colors.inform.active};
-                }
-                `;
 			case 'action':
 			default:
 				return `
