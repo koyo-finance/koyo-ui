@@ -3,9 +3,9 @@ import { darkTheme } from '../src/theme';
 
 export default create({
 	base: 'dark',
-	brandTitle: 'Tracer DAO',
-	brandUrl: 'https://tracer.finance',
-	brandImage: '/tracer_logo.svg',
+	brandTitle: 'Kōyō Labs',
+	brandUrl: 'https://koyo.finance',
+	brandImage: '/koyo_logo.svg',
 
 	colorPrimary: darkTheme.colors.action.active,
 	colorSecondary: darkTheme.colors.action.active,
