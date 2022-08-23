@@ -1,10 +1,11 @@
 import { KoyoTheme } from '../../theme';
 
-type TextColor = keyof KoyoTheme['colors']['text'];
+export type TextColor = keyof KoyoTheme['colors']['text'];
+export type Font = keyof KoyoTheme['fontFamily'];
 
-export interface BodyProps {
+export interface BaseTextProps {
 	variant?: 'light' | 'regular' | 'semi-bold' | 'bold' | 'bolder';
-	fontFamily?: 'main';
+	fontFamily?: Font;
 	color?: TextColor;
 	align?: 'left' | 'center' | 'right';
 	margin?: string;

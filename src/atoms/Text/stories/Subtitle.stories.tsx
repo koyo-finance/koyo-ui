@@ -5,8 +5,8 @@ import { BaseTextProps } from '../Text.types';
 import { ComponentMeta, Story } from '@storybook/react';
 
 export default {
-	title: 'atoms/Text/Body',
-	component: Text.Body,
+	title: 'atoms/Text/Subtitle',
+	component: Text.Subtitle,
 	argTypes: {
 		variant: {
 			control: {
@@ -40,10 +40,10 @@ export default {
 			defaultValue: 'main'
 		}
 	}
-} as ComponentMeta<typeof Text.Body>;
+} as ComponentMeta<typeof Text.Subtitle>;
 
 // Create a master template for mapping args to render the Text component
-const Template: Story<BaseTextProps> = (args) => <Text.Body {...args}>Lorem Ipsum</Text.Body>;
+const Template: Story<BaseTextProps> = (args) => <Text.Subtitle {...args}>Lorem Ipsum</Text.Subtitle>;
 
 // Reuse that template for creating different stories
 export const Light = Template.bind({});

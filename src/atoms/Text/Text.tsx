@@ -1,7 +1,7 @@
 // Generated with util/create-component.js
 import styled from 'styled-components';
 
-import { BodyProps } from './Text.types';
+import { BaseTextProps } from './Text.types';
 
 const getSharedStyles = (props: any) => `
     font-family: ${props.theme.fontFamily[props.fontFamily || 'main']};
@@ -25,12 +25,33 @@ const getSharedStyles = (props: any) => `
 	})()};
 `;
 
-const Body = styled.p<BodyProps>`
+const Headline = styled.h1<BaseTextProps>`
+	${(props) => getSharedStyles(props)}
+	font-size: 40px;
+	line-height: 60px;
+`;
+
+const Title = styled.h2<BaseTextProps>`
+	${(props) => getSharedStyles(props)}
+	font-size: 24px;
+	line-height: 36px;
+`;
+
+const Subtitle = styled.h3<BaseTextProps>`
+	${(props) => getSharedStyles(props)}
+	font-size: 20px;
+	line-height: 30px;
+`;
+
+const Body = styled.p<BaseTextProps>`
 	${(props) => getSharedStyles(props)}
 	font-size: 16px;
 	line-height: 24px;
 `;
 
 export default {
+    Headline,
+    Title,
+    Subtitle,
 	Body
 };
