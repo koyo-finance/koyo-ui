@@ -108,7 +108,6 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 				return `
                 background-color: ${theme.colors.success.cell};
                 color: ${theme.colors.success.text};
-                border: 1px solid ${theme.colors.success.text};
                 &:hover {
                     background-color: ${theme.colors.success.hover}
                 }
