@@ -3,11 +3,32 @@ import { useDarkMode } from 'storybook-dark-mode';
 import './global.css';
 
 const customViewports = {
-	desktop: {
-		name: 'MacBook',
+	samsungS9: {
+		name: 'Samsung Galaxy S9',
 		styles: {
-			width: '1336px',
-			height: '768px'
+			width: '360px',
+			height: '740px'
+		}
+	},
+	samsungS20: {
+		name: 'Samsung Galaxy S20',
+		styles: {
+			width: '480px',
+			height: '1067px'
+		}
+	},
+	iphone7P: {
+		name: 'iPhone 7+',
+		styles: {
+			width: '414px',
+			height: '736px'
+		}
+	},
+	iphone11: {
+		name: 'iPhone 11',
+		styles: {
+			width: '276px',
+			height: '598px'
 		}
 	}
 };
