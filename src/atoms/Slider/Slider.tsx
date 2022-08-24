@@ -103,16 +103,6 @@ const StyledSliderContainer = styled.div.attrs<StyledSliderContainerProps>((prop
 		}};
 	}
 
-	.rc-slider-handle:active {
-		box-shadow: ${({ variant, theme }) => {
-			switch (variant) {
-				case 'primary':
-				default:
-					return `0 0 0.4rem 0.6rem ${theme.colors.cell.background}`;
-			}
-		}};
-	}
-
 	.rc-slider-mark-text,
 	.rc-slider-mark-text-active {
 		color: white;
