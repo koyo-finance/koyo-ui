@@ -12,5 +12,4 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ isDark, children }
 	return <StyledComponentsThemeProvider theme={theme}><>{children}</></StyledComponentsThemeProvider>;
 };
 
-// @ts-expect-error Hyper strict
 export const useTheme = () => React.useContext<KoyoTheme>(ThemeContext);

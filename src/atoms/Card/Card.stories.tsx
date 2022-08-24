@@ -12,7 +12,7 @@ export default {
 		variant: {
 			control: {
 				type: 'select',
-				options: ['base', 'inform', 'token', 'actions']
+				options: ['base', 'inform', 'token', 'actions', 'modal', 'listElement']
 			},
 			defaultValue: 'base',
 			description: 'Variant of the card.'
@@ -65,4 +65,12 @@ Token.args = {
 export const Actions = Template.bind({});
 Actions.args = {
     variant: 'actions'
+};
+export const Modal = Template.bind({});
+Modal.args = {
+    variant: 'modal'
+};
+export const ListElement = Template.bind({});
+ListElement.args = {
+    variant: 'listElement'
 };

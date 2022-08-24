@@ -42,6 +42,14 @@ export interface KoyoTheme {
 			text: string;
 			cell: string;
 		};
+		modal: {
+			cell: string
+		};
+		listElement: {
+			cell: string,
+			hover: string,
+			text: string
+		}
 	};
 	fontFamily: {
 		main: string;
@@ -92,6 +100,14 @@ export const darkTheme: KoyoTheme = {
 			active: '#F0932C',
 			cell: '#F0932C',
 			text: '#000000'
+		},
+		modal: {
+			cell: '#1f2937',
+		},
+		listElement: {
+			cell: '#1f2937',
+			hover: '#4b5563',
+			text: '#ffffff'
 		}
 	},
 	fontFamily: {

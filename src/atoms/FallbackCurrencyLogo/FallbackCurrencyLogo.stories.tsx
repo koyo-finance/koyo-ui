@@ -1,12 +1,12 @@
 // Generated with util/create-component.js
 import React from 'react';
-import FallbackCryptoLogo from './FallbackCryptoLogo';
-import { FallbackCryptoLogoProps } from './FallbackCryptoLogo.types';
+import FallbackCurrencyLogo from './FallbackCurrencyLogo';
+import { FallbackCurrencyLogoProps } from './FallbackCurrencyLogo.types';
 import { ComponentMeta, Story } from '@storybook/react';
 
 export default {
-	title: 'molecules/FallbackCryptoLogo',
-	component: FallbackCryptoLogo,
+	title: 'atoms/FallbackCurrencyLogo',
+	component: FallbackCurrencyLogo,
 	argTypes: {
 		size: {
 			control: {
@@ -37,14 +37,14 @@ export default {
 			defaultValue: 'stroke'
 		}
 	}
-} as ComponentMeta<typeof FallbackCryptoLogo>;
+} as ComponentMeta<typeof FallbackCurrencyLogo>;
 
 // Create a master template for mapping args to render the FallbackCryptoLogo component
-const Template: Story<FallbackCryptoLogoProps> = (args) => <FallbackCryptoLogo {...args}></FallbackCryptoLogo>;
+const Template: Story<FallbackCurrencyLogoProps> = (args) => <FallbackCurrencyLogo {...args}></FallbackCurrencyLogo>;
 
 // Reuse that template for creating different stories
 export const DAILogo = Template.bind({});
 DAILogo.args = {
 	srcs: ['https://tokens.koyo.finance/logos/DAI/512x512.png'],
-	alt: 'DAI',
+	alt: 'DAI'
 };

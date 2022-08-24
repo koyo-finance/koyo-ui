@@ -25,6 +25,10 @@ background-color: ${({ variant, theme }) => {
 				return theme.colors.cell.tertiary + '88';
 			case 'inform':
 				return theme.colors.inform.active + '88';
+			case 'modal':
+				return theme.colors.modal.cell;
+			case 'listElement':
+				return theme.colors.listElement.cell;
 			case 'base':
 			default:
 				return theme.colors.cell.secondary + '88';
@@ -47,4 +51,13 @@ background-color: ${({ variant, theme }) => {
 				return '1rem';
 		}
 	}};
+
+	${({variant, theme}) => variant === 'listElement' && `
+	color: ${theme.colors.listElement.text};
+	transition: backgroung-color .1s ease;
+	cursor: pointer;
+	&:hover {
+		background-color: ${theme.colors.listElement.hover};
+	}
+	` }
 `;

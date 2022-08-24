@@ -1,19 +1,19 @@
 // Generated with util/create-component.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Icon } from '../../atoms';
-import { FallbackCryptoLogoProps } from './FallbackCryptoLogo.types';
+import { Icon } from '../Icon';
+import { FallbackCurrencyLogoProps } from './FallbackCurrencyLogo.types';
 
 const BAD_SRCS: { [url: string]: true } = {};
 
-const FallbackCryptoLogo: React.FC<FallbackCryptoLogoProps> = ({ srcs, alt, size, ...rest }) => {
+const FallbackCurrencyLogo: React.FC<FallbackCurrencyLogoProps> = ({ srcs, alt, size, ...rest }) => {
 	const [, refresh] = useState<number>(0);
 
 	const src: string | undefined = srcs.find((src) => !BAD_SRCS[src]);
 
 	if (src)
 		return (
-			<StyledFallbackCryptoLogoImage
+			<StyledFallbackCurrencyLogoImage
 				data-testid="FallbackCryptoLogo"
 				alt={alt}
 				src={src}
@@ -29,15 +29,15 @@ const FallbackCryptoLogo: React.FC<FallbackCryptoLogoProps> = ({ srcs, alt, size
 	return <Icon data-testid="FallbackCryptoLogo" name="helpCircle" size={size} {...rest} />;
 };
 
-export default FallbackCryptoLogo;
+export default FallbackCurrencyLogo;
 
-export interface StyledFallbackCryptoLogoImageProps {
-	size: FallbackCryptoLogoProps['size'];
+export interface StyledFallbackCurrencyLogoImageProps {
+	size: FallbackCurrencyLogoProps['size'];
 }
 
-const StyledFallbackCryptoLogoImage = styled.img.attrs<StyledFallbackCryptoLogoImageProps>((props) => ({
+const StyledFallbackCurrencyLogoImage = styled.img.attrs<StyledFallbackCurrencyLogoImageProps>((props) => ({
 	size: props.size ?? '1rem'
-}))<StyledFallbackCryptoLogoImageProps>`
+}))<StyledFallbackCurrencyLogoImageProps>`
 	height: ${({ size }) => size};
 	width: ${({ size }) => size};
 `;

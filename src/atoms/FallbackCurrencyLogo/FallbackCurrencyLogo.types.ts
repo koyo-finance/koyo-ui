@@ -1,8 +1,8 @@
 // Generated with util/create-component.js
 import type { IconBaseProps } from 'react-icons';
-import type { IconProps } from '../../atoms';
+import type { IconProps } from '../Icon';
 
-export interface FallbackCryptoLogoProps {
+export interface FallbackCurrencyLogoProps {
 	srcs: string[];
 	alt: string;
 	className?: string;
