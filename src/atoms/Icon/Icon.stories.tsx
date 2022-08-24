@@ -51,14 +51,38 @@ export default {
 const Template: Story<IconProps> = (args) => <Icon {...args}></Icon>;
 
 // Reuse that template for creating different stories
+export const InfoCircle = Template.bind({});
+InfoCircle.args = {
+	name: 'infoCircle',
+	color: 'text'
+};
+
+export const HelpCircle = Template.bind({});
+InfoCircle.args = {
+	name: 'helpCircle',
+	color: 'text'
+};
+
+export const ArrowLeft = Template.bind({});
+ArrowLeft.args = {
+	name: 'arrowLeft',
+	color: 'text'
+};
+
 export const SwapVertical = Template.bind({});
 SwapVertical.args = {
 	name: 'swapVertical',
 	color: 'stroke'
 };
 
-export const InfoCircle = Template.bind({});
-InfoCircle.args = {
-	name: 'infoCircle',
+export const Trash = Template.bind({});
+Trash.args = {
+	name: 'trash',
+	color: 'text'
+};
+
+export const TrashFill = Template.bind({});
+TrashFill.args = {
+	name: 'trashFill',
 	color: 'text'
 };
