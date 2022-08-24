@@ -18,17 +18,16 @@ export default {
 			description: 'Variant of the slider.'
 		},
 		value: {
-			control: { type: 'range', min: 1.1, max: 30.5, step: 0.1 },
-			defaultValue: 1.1
+			control: { type: 'range' }
 		},
 		min: {
-			control: 'number',
+			control: 'number'
 		},
 		max: {
-			control: 'number',
+			control: 'number'
 		},
 		step: {
-			control: 'number',
+			control: 'number'
 		},
 		onChange: {
 			action: 'onChange'
@@ -36,7 +35,7 @@ export default {
 	},
 	parameters: {
 		layout: 'centered',
-        controls: { exclude: ['overlay', 'onChange'] }
+		controls: { exclude: ['overlay', 'onChange'] }
 	}
 } as ComponentMeta<typeof Slider>;
 
@@ -64,6 +63,12 @@ const Template: Story<SliderProps> = ({ onChange, ...args }) => {
 
 // Reuse that template for creating different stories
 export const LeverageSlider = Template.bind({});
+LeverageSlider.argTypes = {
+	value: {
+		control: { type: 'range', min: 1.1, max: 30.5, step: 0.1 },
+		defaultValue: 1.1
+	}
+};
 LeverageSlider.args = {
 	overlay: (value) => `${parseFloat((value ?? 0).toString()).toFixed(2)}x`,
 	min: 1.1,
