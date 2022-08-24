@@ -23,15 +23,12 @@ export default {
 		},
 		min: {
 			control: 'number',
-			defaultValue: 1.1
 		},
 		max: {
 			control: 'number',
-			defaultValue: 30.5
 		},
 		step: {
 			control: 'number',
-			defaultValue: 0.1
 		},
 		onChange: {
 			action: 'onChange'

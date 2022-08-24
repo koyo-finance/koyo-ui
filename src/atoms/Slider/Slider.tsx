@@ -43,11 +43,23 @@ const StyledSliderContainer = styled.div.attrs<StyledSliderContainerProps>((prop
 	variant: props.variant || 'primary'
 }))<StyledSliderContainerProps>`
 	.rc-slider-rail {
-		background: linear-gradient(90deg, rgba(30, 34, 61, 1) 0%, rgba(40, 45, 74, 1) 100%);
+		background: ${({ variant, theme }) => {
+			switch (variant) {
+				case 'primary':
+				default:
+					return theme.colors.cell.tertiary;
+			}
+		}};
 	}
 
 	.rc-slider-track {
-		background: linear-gradient(90deg, rgba(46, 61, 205, 1) 0%, rgba(45, 66, 252, 1) 100%);
+		background: ${({ variant, theme }) => {
+			switch (variant) {
+				case 'primary':
+				default:
+					return theme.colors.cell.stroke;
+			}
+		}};
 	}
 
 	.rc-slider-dot {
