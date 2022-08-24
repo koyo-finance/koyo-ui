@@ -53,8 +53,8 @@ background-color: ${({ variant, theme }) => {
 	}};
 
 	${({variant, theme}) => variant === 'listElement' && `
+	transition: background-color 0.1s ease-in-out;
 	color: ${theme.colors.listElement.text};
-	transition: backgroung-color .1s ease;
 	cursor: pointer;
 	&:hover {
 		background-color: ${theme.colors.listElement.hover};
