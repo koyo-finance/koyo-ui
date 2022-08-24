@@ -1,10 +1,11 @@
 // Generated with util/create-component.js
 import React from 'react';
-
 import { LogoProps } from './Logo.types';
+import WideDark from '../../assets/wide-dark.svg';
+import Wide from '../../assets/wide.svg'
 
 const KoyoLogo: React.FC<LogoProps> = (props) => (
-    <img src={props.variant === 'dark' ? '../../assets/wide-dark.svg' : '../../assets/dark.svg'} alt={`Logo - ${props.variant}`} height={props.height} width={props.width} />
+   <div>{props.variant === 'dark' ? <WideDark /> : <Wide />}</div>
 );
 
 export default KoyoLogo;

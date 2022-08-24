@@ -19,6 +19,13 @@ const Template: Story<LogoProps> = (args) => <KoyoLogo {...args}></KoyoLogo>;
 export const Dark = Template.bind({});
 Dark.args = {
     variant: 'dark',
-    height: 40,
-    width: 80
+    height: 100,
+    width: 200
+};
+
+export const Light = Template.bind({});
+Light.args = {
+    variant: 'light',
+    height: 100,
+    width: 200
 };
