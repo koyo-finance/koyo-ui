@@ -15,9 +15,9 @@ export default Card;
 const StyledCard = styled.div.attrs<CardProps>((props) => ({
 	padding: props.padding || 'md',
 	variant: props.variant,
-	maxWidth: props.maxWidth,
+	maxWidth: props.maxWidth
 }))<CardProps>`
-background-color: ${({ variant, theme }) => {
+	background-color: ${({ variant, theme }) => {
 		switch (variant) {
 			case 'actions':
 				return theme.colors.cell.background;
@@ -35,9 +35,9 @@ background-color: ${({ variant, theme }) => {
 		}
 	}};
 
-    width: 100%;
+	width: 100%;
 	max-width: ${(props) => props.maxWidth};
-    border-radius: ${(props) => props.square ? '0' : '0.75rem'};
+	border-radius: ${(props) => (props.square ? '0' : '0.75rem')};
 	padding: ${({ padding }) => {
 		switch (padding) {
 			case 'none':
@@ -52,12 +52,14 @@ background-color: ${({ variant, theme }) => {
 		}
 	}};
 
-	${({variant, theme}) => variant === 'listElement' && `
+	${({ variant, theme }) =>
+		variant === 'listElement' &&
+		`
 	transition: background-color 0.1s ease-in-out;
 	color: ${theme.colors.listElement.text};
 	cursor: pointer;
 	&:hover {
 		background-color: ${theme.colors.listElement.hover};
 	}
-	` }
+	`}
 `;

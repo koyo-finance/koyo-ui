@@ -2,6 +2,7 @@
 export interface CardProps {
 	variant?: 'base' | 'inform' | 'token' | 'actions' | 'modal' | 'listElement';
 	padding?: 'none' | 'sm' | 'md' | 'lg';
-    square?: boolean;
+	square?: boolean;
 	maxWidth?: string;
+	className?: string;
 }
