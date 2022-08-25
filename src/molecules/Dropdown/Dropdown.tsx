@@ -6,7 +6,15 @@ import { Card, Icon } from '../../atoms';
 import styled from 'styled-components';
 
 const Dropdown: React.FC<DropdownProps> = (props) => (
-	<StyledDropdown data-testid="Dropdown" padding="sm" variant="base" category={props.category} titles={props.titles} mobile={props.mobile}>
+	<StyledDropdown
+		data-testid="Dropdown"
+		padding="sm"
+		variant="base"
+		inGroupPosition={props.inGroupPosition}
+		category={props.category}
+		titles={props.titles}
+		mobile={props.mobile}
+	>
 		<StyledDropdownTitle>
 			<div>{props.category}</div> <Icon name="arrowDown" color="text" size={'1.5rem'} />
 		</StyledDropdownTitle>
