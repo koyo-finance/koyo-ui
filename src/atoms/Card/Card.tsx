@@ -37,6 +37,7 @@ const StyledCard = styled.div.attrs<CardProps>((props) => ({
 
 	width: 100%;
 	max-width: ${(props) => props.maxWidth};
+	border: ${(props) => (props.border ? `2px solid ${props.theme.colors.cell.stroke}` : 'none')};
 	border-radius: ${(props) => (props.square ? '0' : '0.75rem')};
 	padding: ${({ padding }) => {
 		switch (padding) {

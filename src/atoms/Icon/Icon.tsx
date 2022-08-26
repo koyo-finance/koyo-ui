@@ -20,6 +20,8 @@ const Icon: React.FC<IconProps> = ({ name, size, color = 'stroke', className, id
 				return theme.colors.cell.footnote;
 			case 'text':
 				return theme.colors.text.primary;
+			case 'error':
+				return theme.colors.alert.cell;
 			case 'inherit':
 				return 'inherit';
 			case 'stroke':

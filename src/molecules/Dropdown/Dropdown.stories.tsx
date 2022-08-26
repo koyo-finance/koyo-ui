@@ -7,7 +7,14 @@ import { ComponentMeta, Story } from '@storybook/react';
 export default {
 	title: 'molecules/Dropdown',
 	component: Dropdown,
-	argTypes: {}
+	argTypes: {
+		inGroupPosition: {
+			control: {
+				type: 'select',
+				options: ['left', 'center', 'right', undefined]
+			}
+		}
+	}
 } as ComponentMeta<typeof Dropdown>;
 
 // Create a master template for mapping args to render the Dropdown component
@@ -18,6 +25,7 @@ export const Primary = Template.bind({});
 Primary.args = {
 	category: 'KYO',
 	titles: ['Lock', 'Farms', 'Vote'],
-	mobile: false,
-	inGroupPosition: 'middle'
+	mobile: true,
+	open: true,
+	inGroupPosition: 'center'
 };

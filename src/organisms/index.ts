@@ -1,1 +1,1 @@
-export * from './NavMiddle';
+export * from './NavCenter';

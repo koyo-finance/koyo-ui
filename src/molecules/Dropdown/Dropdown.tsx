@@ -14,13 +14,18 @@ const Dropdown: React.FC<DropdownProps> = (props) => (
 		category={props.category}
 		titles={props.titles}
 		mobile={props.mobile}
+		open={props.open}
 	>
 		<StyledDropdownTitle>
-			<div>{props.category}</div> <Icon name="arrowDown" color="text" size={'1.5rem'} />
+			<div>{props.category}</div> <StyledIcon name="arrowDown" color="text" size={'1.5rem'} open={props.open} />
 		</StyledDropdownTitle>
-		<StyledDropdownElementsContainer className="dropdown-content" variant="base" padding="sm">
+		<StyledDropdownElementsContainer
+			className={props.mobile ? (props.open ? 'dropdown-content' : '') : 'dropdown-content'}
+			variant="base"
+			padding="sm"
+		>
 			{props.titles.map((title) => (
-				<StyledDropdownElement hoverColor="">{title}</StyledDropdownElement>
+				<StyledDropdownElement hoverColor={props.hoverColor || ''}>{title}</StyledDropdownElement>
 			))}
 		</StyledDropdownElementsContainer>
 	</StyledDropdown>
@@ -46,7 +51,7 @@ const StyledDropdown = styled(Card).attrs<DropdownProps>((props) => ({
 			case 'left':
 				return `border-top-right-radius: 0px;
                 border-bottom-right-radius: 0px;`;
-			case 'middle':
+			case 'center':
 				return 'border-radius: 0;';
 			case 'right':
 				return `border-top-left-radius: 0px;
@@ -56,13 +61,21 @@ const StyledDropdown = styled(Card).attrs<DropdownProps>((props) => ({
 		}
 	}}
 
-	&:hover {
+	${({ mobile, open }) =>
+		!mobile
+			? `&:hover {
 		height: auto;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
-	}
-
-	&:hover .dropdown-content {
+	}`
+			: open
+			? `
+		height: auto;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	`
+			: ''}
+	${({ mobile }) => !mobile && '&:hover '}.dropdown-content {
 		display: flex;
 		border-top-left-radius: 0px;
 		border-top-right-radius: 0px;
@@ -108,4 +121,15 @@ const StyledDropdownElement = styled.div.attrs<StyledDropdownElementProps>((prop
 	&:hover {
 		color: ${({ hoverColor }) => hoverColor};
 	}
+`;
+
+export interface StyledIconProps {
+	open?: boolean;
+}
+
+const StyledIcon = styled(Icon).attrs<StyledIconProps>((props) => ({
+	open: props.open
+}))<StyledIconProps>`
+	transition: 0.2s ease-in-out;
+	transform: rotate(${({ open }) => (open ? '180deg' : '0')});
 `;

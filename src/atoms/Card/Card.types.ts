@@ -5,4 +5,5 @@ export interface CardProps {
 	square?: boolean;
 	maxWidth?: string;
 	className?: string;
+	border?: boolean;
 }

@@ -50,27 +50,33 @@ const Template: Story<CardProps> = (args) => (
 
 export const Base = Template.bind({});
 Base.args = {
-    variant: 'base'
+	variant: 'base',
+	border: false
 };
 
 export const Inform = Template.bind({});
 Inform.args = {
-    variant: 'inform'
+	variant: 'inform',
+	border: false
 };
 
 export const Token = Template.bind({});
 Token.args = {
-    variant: 'token'
+	variant: 'token',
+	border: false
 };
 export const Actions = Template.bind({});
 Actions.args = {
-    variant: 'actions'
+	variant: 'actions',
+	border: false
 };
 export const Modal = Template.bind({});
 Modal.args = {
-    variant: 'modal'
+	variant: 'modal',
+	border: false
 };
 export const ListElement = Template.bind({});
 ListElement.args = {
-    variant: 'listElement'
+	variant: 'listElement',
+	border: false
 };

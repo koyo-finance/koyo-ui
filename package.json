@@ -28,6 +28,7 @@
 	],
 	"keywords": [],
 	"dependencies": {
+		"@headlessui/react": "^1.6.6",
 		"@svgr/rollup": "^6.2.0",
 		"@svgr/webpack": "5.1.0",
 		"rc-slider": "9.7.5",

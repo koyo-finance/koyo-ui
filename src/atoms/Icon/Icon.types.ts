@@ -9,4 +9,4 @@ export interface IconProps {
 	id?: string;
 }
 
-export type IconColor = 'primary' | 'secondary' | 'tertiary' | 'footnote' | 'stroke' | 'text' | 'inherit';
+export type IconColor = 'primary' | 'secondary' | 'tertiary' | 'footnote' | 'stroke' | 'text' | 'inherit' | 'error';
