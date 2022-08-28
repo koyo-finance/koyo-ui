@@ -4,12 +4,12 @@ import styled, { DefaultTheme, StyledComponentBase, keyframes, css } from 'style
 
 import { ButtonProps } from './Button.types';
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, variant, size, animate, fluid, ...rest }, ref) => (
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, disabled, variant, size, animate, fluid, ...rest }, ref) => (
 	<StyledButton
 		data-testid="button"
 		variant={variant}
 		size={size}
-        animate={animate}
+		animate={animate}
 		fluid={fluid}
 		ref={ref}
 		{...(rest as StyledComponentBase<'button', DefaultTheme, {}, never>)}
@@ -59,16 +59,16 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 			case true:
 			default:
 				return css`
-                animation: ${StyledButtonKeyframes} 0.25s ease-out;
-                &:active:hover,
-                &:active:focus {
-                    animation: none;
-                }
-                &:active:hover,
-                &:active:focus {
-                    transform: scale(0.95);
-                }
-            `;
+					animation: ${StyledButtonKeyframes} 0.25s ease-out;
+					&:active:hover,
+					&:active:focus {
+						animation: none;
+					}
+					&:active:hover,
+					&:active:focus {
+						transform: scale(0.95);
+					}
+				`;
 		}
 	}}
 
@@ -155,6 +155,7 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 				return '1rem';
 		}
 	}};
+
 	cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `;
 

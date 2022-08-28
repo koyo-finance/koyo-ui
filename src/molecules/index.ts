@@ -3,3 +3,4 @@ export * from './Dropdown';
 export * from './Toggle';
 export * from './List';
 export * from './TokenCard';
+export * from './TokenAmountInput';
