@@ -24,7 +24,9 @@ const Template: Story<TokenCardProps> = (args) => <TokenCard {...args}></TokenCa
 export const Primary = Template.bind({});
 Primary.args = {
 	symbol: 'USDC',
+	logoURI: ['https://tokens.koyo.finance/logos/DAI/512x512.png'],
 	size: '2rem',
 	padding: 'sm',
-	width: '50vw'
+	width: '50vw',
+	onClick: () => {}
 };

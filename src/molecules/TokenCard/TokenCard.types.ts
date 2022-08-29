@@ -8,4 +8,5 @@ export interface TokenCardProps {
 	size?: IconBaseProps['size'];
 	padding?: PaddingSizes;
 	width?: string;
+	onClick?: () => void;
 }
