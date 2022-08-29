@@ -115,6 +115,19 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
                     background-color: ${theme.colors.success.active};
                 }
             `;
+			case 'max':
+				return `
+                background-color: ${theme.colors.cell.background};
+                color: ${theme.colors.cell.stroke};
+                border: 2px solid ${theme.colors.cell.stroke};
+                &:hover {
+                    background-color: ${theme.colors.cell.stroke};
+                    color: ${theme.colors.cell.background};
+                }
+                &:active {
+                    background-color: ${theme.colors.success.active};
+                }
+            `;
 			case 'action':
 			default:
 				return `
@@ -156,6 +169,7 @@ const StyledButton = styled.button.attrs<StyledButtonProps>((props) => ({
 		}
 	}};
 
+	${({ variant }) => variant === 'max' && 'padding: 0.25rem;'}
 	cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `;
 

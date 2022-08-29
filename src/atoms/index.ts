@@ -7,3 +7,4 @@ export * from './Icon';
 export * from './Input';
 export * from './Logo';
 export * from './Backdrop';
+export * from './Balance';

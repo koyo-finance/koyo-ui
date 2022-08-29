@@ -31,7 +31,7 @@ export default {
 			defaultValue: 'action',
 			control: {
 				type: 'select',
-				options: ['action', 'alert', 'danger', 'success']
+				options: ['action', 'alert', 'danger', 'success', 'max']
 			}
 		}
 	}
@@ -51,7 +51,7 @@ export const ActionDisabled = Template.bind({});
 ActionDisabled.args = {
 	children: 'Action Button',
 	variant: 'action',
-    animate: false,
+	animate: false,
 	disabled: true
 };
 
@@ -71,4 +71,10 @@ export const Success = Template.bind({});
 Success.args = {
 	children: 'Success Button',
 	variant: 'success'
+};
+
+export const Max = Template.bind({});
+Max.args = {
+	children: 'Max',
+	variant: 'max'
 };
