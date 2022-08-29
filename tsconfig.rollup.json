@@ -1,5 +1,11 @@
 {
 	"extends": "./src/tsconfig.json",
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"declarationDir": "build",
+		"target": "ES5"
+	},
 	"include": ["src"],
 	"exclude": ["node_modules", "build", "storybook-static", "src/**/*.stories.tsx", "src/**/*.test.tsx"]
 }

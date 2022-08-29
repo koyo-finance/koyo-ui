@@ -89,3 +89,5 @@ src/out
 .dynamodb/
 
 .DS_Store
+
+build/

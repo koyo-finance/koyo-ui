@@ -18,5 +18,5 @@
 		"skipLibCheck": true,
 		"importsNotUsedAsValues": "remove"
 	},
-	"include": ["."],
+	"include": ["."]
 }
