@@ -28,9 +28,6 @@ export default {
 		image(),
 		svgr()
 	],
-	moduleContext: {
-		'./node_modules/react-icons/lib/esm/iconBase.js': 'window'
-	},
 	input: 'src/index.ts',
 	output: [
 		{
