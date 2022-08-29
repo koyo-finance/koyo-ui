@@ -5,10 +5,10 @@ import styled from 'styled-components';
 
 import { TokenCardProps } from './TokenCard.types';
 
-const TokenCard: React.FC<TokenCardProps> = ({ symbol, size, padding, width }) => (
+const TokenCard: React.FC<TokenCardProps> = ({ symbol, logoURI, size, padding, width }) => (
 	<StyledTokenCard data-testid="TokenCard" padding={padding} width={width}>
 		<StyledLogoNameCard>
-			<FallbackCryptoLogo srcs={[`https://tokens.koyo.finance/logos/${symbol}/512x512.png`]} alt={symbol} size={size} />
+			<FallbackCryptoLogo srcs={logoURI} alt={symbol} size={size} />
 			<div>USDC</div>
 		</StyledLogoNameCard>
 		<Icon name="arrowDown" size={size} color={'text'} />
