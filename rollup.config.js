@@ -31,7 +31,6 @@ export default {
 	moduleContext: {
 		'./node_modules/react-icons/lib/esm/iconBase.js': 'window'
 	},
-    external: ['rc-util', 'rc-util/es/hooks/useState'],
 	input: 'src/index.ts',
 	output: [
 		{
