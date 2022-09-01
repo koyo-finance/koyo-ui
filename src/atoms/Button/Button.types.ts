@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 // Generated with util/create-component.js
 export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
@@ -6,4 +6,5 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 's
 	size?: 'small' | 'medium' | 'large';
 	animate?: boolean;
 	fluid?: boolean;
+	style?: CSSProperties;
 }

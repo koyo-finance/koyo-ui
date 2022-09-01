@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { BalanceProps } from './Balance.types';
 
-const Balance: React.FC<BalanceProps> = ({ balance }) => (
-	<StyledBalance data-testid="Balance">
+const Balance: React.FC<BalanceProps> = ({ balance, style }) => (
+	<StyledBalance data-testid="Balance" style={style}>
 		<div>Balance:</div>
 		<StyledBalanceAmount>{balance}</StyledBalanceAmount>
 	</StyledBalance>

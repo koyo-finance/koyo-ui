@@ -5,7 +5,12 @@ import styled from 'styled-components';
 import { BackdropProps } from './Backdrop.types';
 
 const Backdrop: React.FC<BackdropProps> = (props) => (
-	<StyledBackdrop onClick={() => (props.closeModal ? props.closeModal(false) : () => {})} modalIsOpen={props.modalIsOpen} data-testid="Backdrop" />
+	<StyledBackdrop
+		style={props.style}
+		onClick={() => (props.closeModal ? props.closeModal(false) : () => {})}
+		modalIsOpen={props.modalIsOpen}
+		data-testid="Backdrop"
+	/>
 );
 
 export default Backdrop;

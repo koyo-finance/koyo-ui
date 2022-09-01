@@ -4,7 +4,7 @@ import styled, { DefaultTheme, StyledComponentBase, keyframes, css } from 'style
 
 import { ButtonProps } from './Button.types';
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, disabled, variant, size, animate, fluid, ...rest }, ref) => (
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, disabled, variant, size, animate, fluid, style, ...rest }, ref) => (
 	<StyledButton
 		data-testid="button"
 		variant={variant}
@@ -12,6 +12,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ children, dis
 		animate={animate}
 		fluid={fluid}
 		ref={ref}
+		style={style}
 		{...(rest as StyledComponentBase<'button', DefaultTheme, {}, never>)}
 	>
 		{children}
