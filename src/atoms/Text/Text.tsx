@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { BaseTextProps } from './Text.types';
 
 const getSharedStyles = (props: any) => `
+    font-size: ${props.size}
     font-family: ${props.theme.fontFamily[props.fontFamily || 'main']};
     margin: ${props.margin || '0'};
     color: ${props.theme.colors.text[props.color || 'primary']};
@@ -50,8 +51,8 @@ const Body = styled.p<BaseTextProps>`
 `;
 
 export default {
-    Headline,
-    Title,
-    Subtitle,
+	Headline,
+	Title,
+	Subtitle,
 	Body
 };

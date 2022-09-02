@@ -20,8 +20,8 @@ export const SliderHandle: (extProps: SliderHandleExtProps) => React.FC<SliderHa
 	);
 };
 
-const Slider: React.FC<SliderProps> = ({ overlay, marks, min, max, step, variant, ...rest }) => (
-	<StyledSliderContainer data-testid="Slider" variant={variant} {...(rest as StyledComponentBase<'div', DefaultTheme, {}, never>)}>
+const Slider: React.FC<SliderProps> = ({ overlay, marks, min, max, step, variant, style, ...rest }) => (
+	<StyledSliderContainer data-testid="Slider" style={style} variant={variant} {...(rest as StyledComponentBase<'div', DefaultTheme, {}, never>)}>
 		<RCSlider.default
 			min={min}
 			max={max}

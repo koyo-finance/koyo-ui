@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 // Generated with util/create-component.js
 export interface InputProps {
 	textAlign?: 'left' | 'center' | 'right';
@@ -18,4 +20,5 @@ export interface InputProps {
 	onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
 	onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 	className?: string;
+	style?: CSSProperties;
 }

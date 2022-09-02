@@ -4,8 +4,8 @@ import styled, { DefaultTheme, StyledComponentBase } from 'styled-components';
 
 import { CardProps } from './Card.types';
 
-const Card: React.FC<CardProps> = ({ children, ...rest }) => (
-	<StyledCard data-testid="card" {...(rest as StyledComponentBase<'div', DefaultTheme, {}, never>)}>
+const Card: React.FC<CardProps> = ({ children, style, ...rest }) => (
+	<StyledCard data-testid="card" {...(rest as StyledComponentBase<'div', DefaultTheme, {}, never>)} style={style}>
 		{children}
 	</StyledCard>
 );

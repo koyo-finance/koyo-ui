@@ -9,4 +9,5 @@ export interface BaseTextProps {
 	color?: TextColor;
 	align?: 'left' | 'center' | 'right';
 	margin?: string;
+	size?: string;
 }

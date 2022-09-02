@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 // Generated with util/create-component.js
 export type PaddingSizes = 'none' | 'sm' | 'md' | 'lg';
 
@@ -8,4 +10,5 @@ export interface CardProps {
 	maxWidth?: string;
 	className?: string;
 	border?: boolean;
+	style?: CSSProperties;
 }

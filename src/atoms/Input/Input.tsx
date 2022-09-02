@@ -8,7 +8,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 	return (
 		<StyledInput
 			placeholder={props.placeholder}
-            textAlign={props.textAlign || 'left'}
+			textAlign={props.textAlign || 'left'}
 			variant={props.variant || 'primary'}
 			disabled={props.disabled}
 			data-testid="input"
@@ -26,6 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 			onFocus={props.onFocus}
 			fontSize={props.fontSize}
 			ref={ref}
+			style={props.style}
 		/>
 	);
 });
@@ -69,7 +70,7 @@ const StyledInput = styled.input<InputProps>`
 	font-family: inherit;
     `}
 	border-radius: ${({ type }) => (type === 'number' ? `0` : '10px')};
-	text-align: ${(props) => props.textAlign || 'left'};;
+	text-align: ${(props) => props.textAlign || 'left'};
 	cursor: ${(props) => (props.disabled ? 'not-allowed' : 'text')};
 	opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 	${({ theme, variant }) => {
@@ -95,7 +96,7 @@ const StyledInput = styled.input<InputProps>`
 		}
 	}}
 	background: transparent;
-    caret-color: white;
+	caret-color: white;
 	&:disabled {
 		cursor: not-allowed;
 	}

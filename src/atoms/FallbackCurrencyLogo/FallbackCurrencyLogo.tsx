@@ -6,7 +6,7 @@ import { FallbackCurrencyLogoProps } from './FallbackCurrencyLogo.types';
 
 const BAD_SRCS: { [url: string]: true } = {};
 
-const FallbackCurrencyLogo: React.FC<FallbackCurrencyLogoProps> = ({ srcs, alt, size, ...rest }) => {
+const FallbackCurrencyLogo: React.FC<FallbackCurrencyLogoProps> = ({ srcs, alt, size, style, ...rest }) => {
 	const [, refresh] = useState<number>(0);
 
 	const src: string | undefined = srcs.find((src) => !BAD_SRCS[src]);
@@ -19,6 +19,7 @@ const FallbackCurrencyLogo: React.FC<FallbackCurrencyLogoProps> = ({ srcs, alt, 
 				src={src}
 				size={size}
 				className={rest.className}
+				style={style}
 				onError={() => {
 					if (src) BAD_SRCS[src] = true;
 					refresh((i) => i + 1);
